@@ -1,0 +1,1388 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+html,
+body {
+    height: 100%;
+    line-height: 1;
+    font-size: 14px;
+    color: #252b42;
+    font-weight: 500;
+    font-family: Montserrat;
+    background: #fafafa;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+
+._container {
+    max-width: 1046px;
+    padding: 0px 15px;
+    margin: 0px auto;
+    box-sizing: content-box;  /*------Сделал отступы с права и слева, при этом, чтобы размер главного блока, который 1046px не уменьшался, использовал это свойство----------*/
+}
+
+._ibg {
+    position: relative;
+}
+._ibg img {                     /*------------------Дополнительный технический класс влияющий на картинки-----------------------*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+/*------------------------------------------------------*/
+
+
+.header {
+    position: absolute;
+    width: 100%;
+    left: 0;                    /*--------------------лефт 0 топ 0 - обязательно-----------------------------*/
+    top: 0;
+    z-index: 50;
+}
+.header__container {
+    display: flex;
+    min-height: 104px;
+    align-items: center;    /*--------выровнял по центру надпись Relvise------------------*/
+    
+}
+@media (max-width: 479px) {
+    .header__container {
+        min-height: 70px;   /*--------уменьшил высоту самой шапки на маленьких мобилках------------------*/
+        }                           
+        }
+
+.header__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: inherit;    /*--------ccылки не наследуют цвет, по этому применяем это свойство------------------*/
+}
+@media (max-width: 380px) {
+    .header__logo {
+       font-size: 20px;;
+    }                           
+    }
+.header__menu {
+    margin: 0 0 0 133px;
+}
+@media (max-width: 992px) {
+.header__menu {
+    margin: 0 0 0 80px;
+}                           /*--------внимательно смотри на все кавычки, не проморгай, теперь, когда ширина экрана на устройстве станет менее 992px, расстояние между Relvise  и пунктами уменьшится до 80px-----------------*/
+}
+
+@media (max-width: 767px) {
+    .header__menu {
+        margin: 0 0 0 40px;
+    }                           
+    }
+
+@media (max-width: 479px) {
+    .header__menu {
+         margin: 0 0 0 20px;
+        }                           
+        }
+
+.menu {
+    padding: 5px 0;          /*--------НЕ МОЖЕМ это свойство записать в основном ограничивающем контейнере!!! так как ограничивающий контейнер, отступ безопасности, который я задал для основного ограничивающего контейнера, так, когда пункты списка ul будут добавляться, верхний пункт не будет в плотную прижиматься к верхней границе экрана------------------*/
+}
+.menu__list {
+    flex-wrap: wrap;/*--------пункты теперь могут ломаться-переноситься на другую строку------------------*/
+    display: flex;
+    font-size: 14px;
+}
+
+@media (max-width: 403px) {
+    .menu__list {
+        font-size: 1px;
+        }                           
+        }
+
+@media (max-width: 403px) {
+    .menu__list {
+         flex-direction: column;
+        }                           
+        }
+
+.menu__item {
+    
+}
+.menu__item:not(:last-child){
+    margin: 0 21px 0 0;
+}
+.header__link {
+    color: #737373;
+    font-weight: 600;
+    line-height: calc(24/14*100%);  /*--------24/14*100=171.48 , теперь высота строки будет меняться пропрорционально---------------*/
+}
+
+@media (max-width: 479px) {
+    .header__link {
+         font-size: 18px;
+        }                           
+        }
+
+
+        /*--------main------------------*/
+
+        .page {
+            
+            flex: 1 1 auto;  /*--------позволяем увеличиваться блоку main, так он прижимает футер к ниизу, при этом не забудь основному блоку обертке  wrapper  присвоить следующие свойстваЖ display: flex; flex-direction: column;------------------*/
+        }
+
+        .page__main-block {
+        }
+
+        .page__services {
+            margin: -111px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page__advantages {
+            margin: 100px 0 0 0;
+        }
+        .page__practice {
+        }
+
+        .page__whoweare {
+        }
+
+        .page__clients {
+            background-color: #FAFAFA;
+        }
+
+        .page__clients:not(:last-child) {
+            padding: 0 0 10px 0;
+        }
+        .page__subscrige {
+            background-color: #FAFAFA;
+        }
+        .page__getintouch {
+            background-color: #E6E6E6;
+        }
+/*--------HRADER BLOCK------------------*/
+        .header-block {
+            text-align: center;
+            letter-spacing: 0.2px;
+            
+            
+        }
+        
+        .header-block__title {
+            font-size: 40px;
+            line-height: 142%;
+            font-weight: 700;
+        }
+        @media (max-width: 380px) {
+            .header-block__title {
+                font-size: 25px;
+            }
+        }
+        .header-block__sub-title {
+            color: #737373;
+            line-height: 142%;   /*--------не наследуется------------------*/
+            font-size: 14px;
+        }
+
+        .header-block__sub-title:not(:last-child) {
+            margin: 0 0 10px 0;
+        }
+
+        /*--------footer------------------*/
+        .footer {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            margin: 0px 0 0 0 ;
+
+        }
+
+         /*--------MAIN BLOCK------------------*/
+      
+       
+        .main-block {
+            position: relative;
+        }
+        .main-block__container {
+        }
+        .main-block__body {
+            padding: 184px 0 191px 0;     /*--------сделал отступы снизу и сверху, так как изображение cover, то и картинка растянулась на 100% экрана------------------*/
+            position: relative;
+            z-index: 2;
+            max-width: 509px;
+        }
+
+        @media (max-width: 992px) {               /*--------уменьшил отступ между всем блоком и верхним header-----------------*/
+            .main-block__body {
+                padding: 120px 0 191px 0;}  
+
+            }
+
+            
+            
+        
+
+        .main-block__body > *:not(:last-child) {                            /*--------* - значит любой тег (div p или любой другой (строчные по типу span работать не будут)), обратился ко всем объектам первого уровня, теперь, сколько бы элементов не добавилось ниже или выше, растояние все равно будет между ними в 35пк (думай о том что будет дальше с версткой) ------------------*/
+            margin: 0 0 35px 0;
+        }
+        .main-block__title {
+            font-size: 58px;
+            font-weight: 800;
+            letter-spacing: 0.2px;     /*--------letter-spacing  - апределяет межбуквенное расстояние в тексте, можно задавать минусовое расстояние, тогда буквы будут наезжать друг на друга------------------*/
+            line-height: calc(80/58*100%);  /*--------процентный line height, вычисляеся как: высота линии как в макете, то есть 80 разделить на размер шрифта, то есть на 58, и умножить на 100%, так же запомни, что при верстке следует также включать line height в размер между блоками и иными элементами------------------*/
+        }
+
+        @media (max-width: 479px) {               
+            .main-block__title {
+                font-size: 42px;
+            }  
+
+            }
+
+            
+
+                @media (max-width: 540px) {               
+                    .main-block__title {
+                        font-size: 38px;
+                    }  
+                    }
+
+                    @media (max-width: 380px) {               
+                        .main-block__title {
+                            font-size: 32px;
+                        }  
+                        }
+                        @media (max-width: 350px) {               
+                            .main-block__title {
+                                font-size: 28px;
+                            }  
+                            }
+
+        .main-block__text {
+            color: #737373;
+            font-size: 20px;
+            line-height: 150%;
+            max-width: 376px;
+        }
+
+        @media (max-width: 479px) {               
+            .main-block__text {
+            color: #333232;
+            }  
+
+            }
+
+        .main-block__buttons {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px 0;
+            
+            
+        }
+        .main-block__button {
+            
+            border-radius: 37px;
+            display: flex;          /*--------ссылки <a></a> - это строчный элемент, так как придал функцию display: flex они стали блочными------------------*/
+            min-height: 48px;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 0.2px;
+            font-weight: 700;
+            text-align: center; /*--------отцентровал текст------------------*/
+            line-height: 150%;
+            padding: 5px 36px;
+            margin: 10px 0;
+            
+        }
+
+        @media  (max-width:479px) {
+            .main-block__button {
+                flex: 1 1 100%;       /*--------flex: 1 1 auto - дал возможность увеличиваться кнопкам почти на весь экран в ширину, а потом поменял данное значение на display: block;, потом снова убрал display: block; и вернул flex: 1 1 100% (только теперь на конце не autoб а 100% это позволило кнопкам на весь размер растянуться, до этого я лично видел, что нижняя кнопка была чуть длинее верхней (то есть оранжевой)  ------------------*/
+            }
+        }
+
+        @media  (min-width:479px) {
+            .main-block__button:not(:last-child){
+            margin-right: 10px;       /*--------сделал отступ между кнопками только на экранах шире 479px, мобаил ферст - то есть верстка сначала для телефона, а потом для ПК, так на экранах менее 479px кнопки прижаты вплотную друг к другу------------------*/
+            }
+        }
+
+        
+
+        .main-block__button_orange {
+            background: #ff7b47;
+            color: #fff;
+        }
+
+        .main-block__button_border {
+            color: #0d5c63;
+            border: 1px solid #0d5c63;
+            
+        }
+        .main-block__image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+                       
+        }
+@media (max-width:1300px) {
+        .main-block__image img{
+            object-position: right;
+                       
+        }
+    }
+
+        /* @media (max-width:1300px) {
+        .main-block__image img{
+            object-position: right;  
+        }          /* --------медиа запросом, для устройств с экраном менее 1300px, сделал положение фоновой картинки right, то есть справа, теперь люди всегда в теме------------------ */
+
+        @media (max-width:992px) {
+            .main-block__image img {
+                opacity: 0.5;
+            }
+        }
+
+
+
+
+        /* .main-block__image img{
+            object-position: right;    
+        } */
+            
+            /*--------object-position: left, right, top, buttom  - этими вариантами я двигаю изображение картинки вверх вниз влево в право относительно экрана------------------
+            /*--------если хочешь обратиться к конретной картинке, то помимо ее класса необходимо указывать img (это так же, как обратьться ко всем дивам в блоке)------------------ */
+        
+
+
+        
+        /*--------отцентровал текст------------------ */
+
+        
+        .services {
+            
+        }
+        .services__container {
+            
+        }
+        .services__body {
+        }
+
+        @media (min-width: 609px) {
+            .services__body {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0px -15px -30px;
+                
+            }
+        }
+        @media (max-width: 609px) {
+            .services__body {
+                padding: 0 0 15px 0;
+                
+            }
+        }
+
+
+
+        /* @media (max-width: 670px) {
+            .services__body {
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0px 30px;
+                height: 100%;
+            }
+        } */
+
+        .services__column {
+            
+            flex: 0 1 33.333%;
+            margin: 0 0 30px 0;   /* ----- добавил отступ а в services__body его отнял, тем самым нивелировал нижний отступ ---*/
+        }
+
+        @media (min-width: 600px) {
+            .services__column {
+              padding: 0px 15px;
+              
+            }
+        }      /* ----- нихера не понятно, но очень интересно---*/
+
+
+@media (max-width: 992px) {
+    .services__column {
+        flex: 0 1 50%;
+        
+    } /* ----- перестроил флекс колонку и добавил нижний отступ---*/
+
+    .services__column:last-child {
+        margin: 0 auto 30px;
+        
+    } /* ----- позволил последнему контейнеру увеличиваться---*/
+}
+
+
+
+
+
+        .services__item {
+            
+            height: 100%;       /*--------выровнял все блоки по высоте, "нет смысла делать флекс и позволять какому-то элементу увеличиваться, поскольку больше одного элемента, которые могкт увеличиваться - это totle и text"------------------ */
+            box-shadow: 0 13px 19px rgba(0,0,0, 0.07);
+            background-color: #fff;
+            padding: 35px;
+        }
+
+        @media (max-width: 479px) {
+            .services__item {
+                padding: 25px;
+            }
+            }
+        
+
+        .item-service {
+        }
+
+        .item-service > *:not(:last-child) {
+            margin: 0 0 10px 0;
+        }
+
+        .item-service_icon {
+        }
+        .item-service_title {
+            font-weight: 700;
+            letter-spacing: 0.1px;
+            font-size: 24px;
+            line-height: 133%;
+        }
+        .item-service_text {
+            color: #737373;
+            line-height: 142%;
+        }
+
+        .item-service_green {
+            background-color: #0D5C63;
+            color: #fff;
+        }
+
+        .item-service_green .item-service_text {
+            color: #fff;
+        }
+
+
+/* ----- блок 2---*/
+
+
+        
+        .advantages {
+            
+        }
+        .advantages__container {
+            
+        }
+        
+        .advantages__header {
+            margin: 0 0 20px 0;
+            
+            
+        }
+        
+        .advantages__body {
+            display: flex;
+            margin: 0 -15px;
+            flex-wrap: wrap;
+            
+        }
+        .advantages__column {
+            padding: 0 15px;
+            flex: 0 1 25%;
+        }
+
+        @media (max-width: 1000px) {
+            .advantages__column {
+                flex: 0 1 50%;
+                margin: 0 0 10px 0;
+            }
+            }
+
+            @media (max-width: 570px) {
+                .advantages__column {
+                    flex: 0 1 100%;
+                }
+                }
+
+        .advantages__item {
+            background-color: #fff;
+            padding: 30px 40px;
+            text-align: center;
+            height: 100%;
+        }
+        .advantages__item div:not(:last-child) {
+            margin: 0 0 10px 0;
+        }
+        .advantages__icon {
+        }
+        .advantages__value {
+            color: #252B42;
+            font-weight: 700;
+            font-size: 40px;
+        }
+        .advantages__text {
+            color: #737373;
+            font-weight: 700;
+        }
+
+
+
+        /*--------------------------------Картинку и заголовок делай как ссылку--*/
+
+        
+        .practice {
+            padding: 40px 0 80px 0;
+            margin: 35px 0 0 0;
+            
+        }
+        @media (max-width:993px) {
+            .practice  {                     
+                padding: 40px 0 80px 0;
+            }   
+        }
+        @media (max-width:767px) {
+            .practice  {                     
+                padding: 0px 0 40px 0;
+            }   
+        }
+        .practice__container {
+        }
+        
+        .practice__header {
+            margin: 0 0 45px 0;
+        }
+
+        @media (max-width:767px) {
+            .practice__header  {                     
+                padding: 0px 0 15px 0;
+            }   
+        }
+        
+        .practice__body {
+            margin: 0px -20px -30px;                  /*--------Каким-то образом эта штука выравняла блоки по высоте, не выровняла, а подогнала под нужные размеры первый блок------------------*/
+            display: flex;
+            flex-wrap: wrap-reverse;
+        }
+        .practice__column {                     /*-------Каким-то образом эта штука выравняла блоки по высоте, не выровняла, а подогнала под нужные размеры первый блок----------------*/
+            padding: 0 20px;
+            margin: 0 0 30px 0;                       /*-------Лыйф хак с отрицательным маржином .practice__body {margin: 0px -20px -30px}; practice__column {margin: 0 0 30px 0;} ----------------*/
+            flex: 0 1 25%;
+        }
+
+        @media (max-width:1040px) {
+            .practice__column {                     
+                padding: 0 20px;
+                flex: 0 1 50%;
+            }
+            
+        }
+
+        @media (max-width:570px) {
+            .practice__column {                     
+                padding: 0 20px;
+                flex: 0 1 100%;
+            }
+            
+        }
+
+
+        .practice__item {
+            
+        }
+        .item-practice {
+            background-color: #fff;
+            display: flex;    
+            height: 100%;                           /*--------А вот это уже выровняла все блоки? 100% высоты решает!!!-----------*/
+            flex-direction: column;
+        }
+
+        .item-practice__content {
+            padding: 30px; 
+            flex: 1 1 auto;                         /*--------позволила блоку увеличиваться и как-то все блоки выровняла-----------*/
+
+        }
+        .item-practice__link {
+            color: inherit;
+            display: inline-block;
+        }
+        .item-practice__link:hover {
+            text-decoration: underline;
+        }
+        .item-practice__link:not(:last-child) {
+            margin: 0 0 15px 0;
+        }   /*-------------Отступ снизу не сработал так как это ссылка, для того, чтобы отступ сработал, нужно придать родительскому контейнеру свойство display: inline-block;----------------*/
+        .item-practice__title {
+            letter-spacing: 0.1px;
+            font-size: 16px;
+            line-height: 150%;
+            font-weight: 700;
+        }
+
+        .item-practice__text {
+            color: #737373;
+            line-height: 142%;
+        }
+        .item-practice__image {
+            display: block;
+            padding: 0 0 69% 0;
+        }
+
+        /*----------whoweare-----------*/
+
+
+        
+        .whoweare {
+            padding: 80px 0 130px 0;
+            background-color: #fffFFF;
+        }
+        @media (max-width: 950px ) {
+            .whoweare {
+                padding: 50px 0 50px 0;
+            }
+        }
+        .whoweare__container {
+        }
+        
+        .whoweare__header {
+            margin: 0 0 100px 0;
+        }
+
+        @media (max-width: 950px ) {
+            .whoweare__header {
+                margin: 0 0 30px 0;
+            }
+        }
+        
+        .whoweare__body {
+            display: flex;
+            align-items: flex-start;
+        }
+        @media (max-width: 950px ) {
+            .whoweare__body {
+                flex-direction: column-reverse;
+                align-items: stretch;
+                
+            }
+        }
+         
+        .whoweare__video {
+            flex: 0 0 57%;
+            position: relative;
+            padding: 0 0 42.25% 0;
+        }
+
+        .whoweare__video iframe{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+        
+        .whoweare__content {
+            flex: 1 1 auto;
+            padding: 20px 0 0 121px;
+        }
+        @media (max-width: 1080px ) {
+            .whoweare__content {
+                padding: 0px 0 0 50px;
+            }
+        }
+
+        @media (max-width: 992px ) {
+            .whoweare__content {
+                padding: 40px 0 0 25px;
+            }
+            .whoweare__video {
+                padding: 0 0 52.25% 0 ;
+            }
+            .whoweare__video:not(:last-child) {
+                margin: 50px 0 0px 0;
+            }
+        }
+        
+        .whoweare__title {
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 142%;
+            letter-spacing: 0.2px;
+            color: #252B42;
+        }
+        @media (max-width: 950px ) {
+            .whoweare__title {
+                font-size: 24px;
+            }
+        }
+        .whoweare__title:not(:last-child) {
+            margin: 0 0 10px 0;
+        }
+        .whoweare__text {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 143%;
+            letter-spacing: 0.2px;
+            color: #737373;
+        }
+        /* .whoweare__top {
+            margin: 0 0 100px 0;
+        } */
+        .whoweare__top:not(:last-child) {
+            padding:   0 0 50px 0;
+        }
+        
+        .whoweare__items {
+            
+        }
+        .whoweare__item {
+            
+        }
+        .whoweare__item:not(:last-child) {
+            margin: 0 0 30px 0;
+        }
+        .item-whoweare {
+            display: flex;
+        }
+        .item-whoweare__icon {
+            flex:  0 0 32px;
+        }
+        .item-whoweare__body {
+            flex: 1 1 auto;
+            padding: 0 0 0 20px;
+        }
+        .item-whoweare__title {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 150%;
+            
+        }
+        .item-whoweare__title:not(:last-chil) {
+            margin:  0 0 5px 0;
+        }
+        .item-whoweare__text {
+            line-height: 143%;
+             color: #737373;
+        }
+
+/*----------clients-----------*/
+
+       
+        .clients {
+            padding: 50px 0;
+        }
+        @media (max-width: 767px ) {
+            .clients {
+                padding: 30px 0;
+            }
+        }
+        .clients__container {
+        }
+        
+        .clients__items {
+            display: flex;
+            align-items:  center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .clients__item {
+            padding: 8px 15px;
+            flex: 0 1 16.6667%;
+            text-align: center;
+            min-width: 140px;
+        }
+        .clients__item img {
+            max-width: 100%;
+        }
+
+        /*----------clients-----------*/
+        
+        .subscrige {
+            position: relative;
+            padding: 0 0 20px 0;
+
+        }
+        .subscrige::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: #252b42;
+            height: 77px;
+            left: 0;
+        }
+        .subscrige__container {
+        }
+        
+        .subscrige__body {
+            position: relative;
+            z-index: 2;
+            padding: 30px 50px;
+            align-items: center;
+            background: #12213c;
+            border-radius: 2px;
+            
+        }
+        @media (min-width: 1070px ) {
+            .subscrige__body {
+                margin: 0 30px;
+            }
+        }
+        @media (min-width: 810px ) {
+            .subscrige__body {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .subscrige__title {
+            padding: 0 10px 0 0;
+            flex:  0 1 50%;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 133%;
+            letter-spacing: 0.1px;
+        }
+        @media (max-width: 810px ) {
+            .subscrige__title {
+                margin: 0 0 20px 0;
+            }
+            .subscrige__body {
+                margin: 0 -15px;
+                padding: 20px 25px;
+            }
+        }
+        @media (min-width: 810px ) {
+            .subscrige__title {
+            min-width: 266px;
+            }
+        }
+        .subscrige_form {
+            flex:  0 1 50%;
+            display: flex;
+            align-items: center;
+
+        }
+        .subscrige__input {
+            width: 100%;
+            background: #e6e6e6;
+            color: #737373;
+            flex: 1 1 auto;
+            min-height: 58px;
+            padding: 0 20px;
+            border: 1px solid #E6E6E6;
+            border-radius: 5px 0px 0px 5px;
+            border-right: 0;
+        }
+        .subscrige__input:focus {
+            color: #000;
+        }
+
+
+        .subscrige__button {
+            background: #FF7B47;
+            border: 1px solid #E6E6E6;
+            border-radius: 0px 5px 5px 0px;
+            display: flex;
+            min-height: 58px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 22px;
+        }
+        @media (max-width: 810px ) {
+            .subscrige__button {
+               padding: 0 15px ;
+            }
+        }
+
+
+/*----------getintouch-----------*/
+
+        .getintouch {
+            padding: 80px 0 136px 0;
+        }
+        @media (max-width: 992px ) {
+            .getintouch {
+                padding: 80px 0 80px 0; ;
+            }
+        }
+        @media (max-width: 560px ) {
+            .getintouch {
+                padding: 80px 0 30px 0; ;
+            }
+        }
+        .getintouch__container {
+            
+        }
+        
+        .getintouch__header {
+            margin:  0 0 80px 0;
+        }
+       
+        .getintouch__items {
+            margin: 0 -15px;
+            
+        }
+        @media (min-width: 992px ) {
+            .getintouch__items {
+                
+                display: flex;
+                align-items: center;
+            }
+            
+        }
+
+        @media (max-width: 992px ) {
+   
+            .getintouch__items >*:not(:last-child) {
+                margin: 0 0 10px 0;
+            }
+        }
+
+
+
+        .getintouch__item {
+            flex: 0 1 33.333%;
+        }
+        
+        .item-getintouch {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 50px 15px;
+        }
+        .item-getintouch >*:not(:last-child) {
+            padding:  0 0 15px 0;
+        }
+        .getintouch__icon {
+            
+        }
+        
+        
+        .getintouch__emails {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .item-getintouch__email {
+            color: inherit;
+            font-weight: 600;
+            line-height: 150%;
+            font-size: 16px;
+        }
+        .item-getintouch__email:hover {
+            text-decoration: underline;
+        }
+        .getintouch__label {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 150%;
+        }
+        .item-getintouch__button {
+            border: 1px solid #FF7B47;
+            min-height: 44px;
+            display: flex;
+            font-weight: 600;
+            justify-content: center;
+            align-items: center;
+            color: #FF7B47;
+            line-height: 142%;
+            padding: 5px 20px;
+            text-align: center;
+            border-radius: 5px;
+            transition: all 0.5s ease 0s;
+        }
+        .item-getintouch__button:hover {
+            color: #fff;
+            background-color: #FF7B47;
+            transition: all 0.5s ease 0s;
+        }
+
+
+
+        .getintouch__item_2{
+            flex: 0 1 33.333%;
+        }
+        @media (max-width: 570px ) {
+            .getintouch__item {
+                flex: 1 1 100%;
+                
+            }
+            .getintouch__item_2 {
+                flex: 1 1 100%;
+                
+            }
+        }
+        .item-getintouch_2 >*:not(:last-child) {
+            padding:  0 0 15px 0;
+        }
+        .item-getintouch_2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #252B42;
+            padding: 80px 15px;
+        }
+                
+       
+
+        .getintouch__emails_2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .item-getintouch__email_2 {
+            color: inherit;
+            font-weight: 600;
+            line-height: 150%;
+            font-size: 16px;
+        }
+        
+        .getintouch__label_2 {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 150%;
+            color: #fff;
+        }
+        .item-getintouch__button_2 {
+            border: 1px solid #fff;
+            min-height: 44px;
+            display: flex;
+            font-weight: 600;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            line-height: 142%;
+            padding: 5px 20px;
+            text-align: center;
+            border-radius: 5px;
+            transition: all 0.5s ease 0s;
+        }
+
+        .item-getintouch__button_2:hover {
+            color: #252B42;
+            background-color: #fff;
+            transition: all 0.5s ease 0s;
+        }
+        
+/*----------consulting-----------*/
+
+
+        .page__consulting {
+        }
+        .consulting {
+        }
+        
+        .consulting__body {
+            display: flex;
+            
+            justify-content: space-between;
+            padding: 40px 15px;
+        }
+        @media (max-width: 412px ) {
+            .consulting__body {
+                flex-wrap: wrap;
+            }
+        }
+        @media (max-width: 412px ) {
+            .consulting__button {
+                flex: 0 1 100%;
+            }
+        }
+
+        .consulting__header {
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .consulting__header:not(:last-child) {
+            margin: 0 0 10px 0;
+        }
+        .consulting__title {
+            
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 133%;
+            letter-spacing: 0.1px;
+            color: #252B42;
+        }
+        .consulting__sub-title {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 143%;
+            letter-spacing: 0.1px;
+            color: #252B42;
+        }
+        .consulting__button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #FF7B47;
+            border-radius: 5px;
+            padding: 15px 40px;
+            margin: 0 0 0 10px;
+
+
+
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 200%;
+            letter-spacing: 0.2px;
+            max-height: 58px;
+            
+        }
+        @media (max-width: 680px ) {
+            .consulting__button {
+                padding: 5px 10px;
+            }
+        }
+        
+       
+
+        .consulting__button-link {
+            justify-content: center;
+            min-width: 80px;
+            max-height: 58px;
+            color: #fff;
+            white-space: nowrap;
+            
+        }
+
+
+/*----------footer-----------*/
+
+        .footer {
+            background-color: #12213c;
+        }
+        .footer__header {
+            
+            padding: 50px 15px;
+            display: flex;
+         
+        }
+        @media (max-width: 992px ) {
+            .footer__header {
+                flex-wrap: wrap;
+            }
+            .footer__header >* {
+                flex: 0 1 25%;
+                padding: 15px 0 0 0 ;
+            }
+            .footer__header >*:last-child {
+                flex: 1 1 100%;
+                
+            }
+        }
+        @media (max-width: 366px ) {
+            .footer__header {
+                flex-wrap: wrap;
+            }
+            .footer__header >* {
+                flex: 0 1 50%;
+                padding: 15px 0 0 0 ;
+            }
+            .footer__header >*:last-child {
+                flex: 1 1 100%;
+                
+            }
+        }
+        .footer__header {}
+        .footer__header >*{
+            flex: 0 1 19%;
+         
+        }
+        .footer__header >*:last-child {
+            flex: 0 1 24%;
+        }
+        .footer__header >*:not(:last-child) {
+            margin: 0 30px 0 0;
+        }
+        .footer__row {
+        }
+        .footer__row_title {
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: 0.1px;
+            margin: 0 0 20px 0;
+        }
+        .footer__row_list {
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 171%;
+            letter-spacing: 0.2px;
+        }
+        .footer__row_list_li:not(:last-child) {
+            margin: 0 0 10px 0;
+            
+        }
+
+        .footer__row_list_li:hover {
+            text-decoration: underline;
+        }
+
+
+        .footer__row_title_end {
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: 0.1px;
+            margin: 0 0 20px 0;
+        }
+        .footer__row_list_li_end {
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 171%;
+            letter-spacing: 0.2px;
+        }
+        .footer__row_list_end {
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 171%;
+            letter-spacing: 0.2px;
+        }
+        .footer__row_list_li_end:not(:last-child) {
+            margin: 0 0 10px 0;
+            
+        }
+
+        .footer__row_list_li_end:hover {
+            text-decoration: underline;
+        }
+        .one::before {
+            content: "";
+            background-image: url(image/Footer/1.svg)
+        }
+        .two::before {
+            content: "";
+            background-image: url(image/Footer/2.svg)
+        }
+        .tree::before {
+            content: "";
+            background-image: url(image/Footer/3.svg)
+        }
+
+
+        
+        .footer__sotial a{
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 171%;
+            letter-spacing: 0.2px;
+        }
+        .sotial a{
+            display: inline-block;
+            padding: 0 0px 15px 34px;
+            
+        }
+        .sotial_item_phone {
+            
+            background: url(image/Footer/1.svg) top left no-repeat;
+        }
+        .sotial_item_map {
+            background: url(image/Footer/2.svg) top left no-repeat;
+        }
+        .sotial_item_emeil {
+            background: url(image/Footer/3.svg) top left no-repeat;
+        }
+
+
+
+
+
+        .infinity {
+            background-color: #FAFAFA;
+            
+        }
+        .footer__buttom {
+            
+            display: flex;
+            justify-content: space-between;
+            padding: 25px 15px;
+        }
+        @media (max-width: 570px ) {
+            .footer__buttom {
+                flex-wrap: wrap;
+               
+            }
+           
+        }
+        .consulting__sub-title {
+        }
+        .footer__buttom_sotial {
+            display: flex;
+        }
+        @media (max-width: 543px ) {
+           
+            .consulting__sub-title {
+                margin: 0 auto;
+            }
+            .footer__buttom_sotial {
+                margin: 0 auto;
+                padding: 15px 0 15px 0;
+               
+            }
+           
+        }
+        .footer__buttom_sotial a:not(:last-child) {
+            margin: 0 20px 0 0;
+
+        }
+        
+        .sotial__item {
+            display: inline-block;
+            display: flex;
+            align-items: center;
+        }
